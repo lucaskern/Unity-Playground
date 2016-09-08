@@ -49,7 +49,7 @@ public class FireBall : MonoBehaviour {
 
 		} else if (Input.GetButtonDown ("Fire2") && ammo >= 10) {
 			//generate random force
-			int randomForce = Random.Range(1000,4000);
+			int randomForce = Random.Range(2500,4000);
 
 			//create projectile
 			Rigidbody ballInstance;
