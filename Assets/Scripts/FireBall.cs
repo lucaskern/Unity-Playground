@@ -72,6 +72,7 @@ public class FireBall : MonoBehaviour {
 	void PlaySound(int clip) 
 	{
 		AudioSource audio = GetComponent<AudioSource>();
+		audio.volume = 0.2f;
 		audio.clip = audioClip[clip];
 		audio.Play ();
 	}
