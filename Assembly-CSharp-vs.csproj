@@ -48,10 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Break.cs" />
      <Compile Include="Assets\Scripts\DeleteObjects.cs" />
+     <Compile Include="Assets\Scripts\DrawUI.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Filter.cs" />
      <Compile Include="Assets\Scripts\FireBall.cs" />
      <Compile Include="Assets\Scripts\FollowHead.cs" />
      <Compile Include="Assets\Scripts\Particle.cs" />
+     <Compile Include="Assets\Scripts\Powerups.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

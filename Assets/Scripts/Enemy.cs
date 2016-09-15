@@ -4,29 +4,30 @@ using System.Timers;
 
 public class Enemy : MonoBehaviour {
 
-	GameObject enemyInstance;
+	private GameObject enemyInstance;
+
+	public GameObject burst;
 
 	// Use this for initialization
 	void Start () {
 		enemyInstance = this.gameObject;
 
+		InvokeRepeating ("MoveEnemy", 3.0f, 3.0f);
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-			MoveEnemy ();
 	}
 
 	void MoveEnemy()
 	{
-		if (Time.time % 3 < .1 && Time.time > 1) 
-		{
 			enemyInstance.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 3);
-			//MoveEnemy ();
-
 			//Debug.Log("Enemy moved forward!");
-		}
-		//Debug.Log ("MoveEnemy called at " + Time.time);
 	}
+
+//	void OnDestroy()
+//	{
+//		burst.SetActive (true);
+//	}
 }

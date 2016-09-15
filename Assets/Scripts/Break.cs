@@ -6,10 +6,12 @@ public class Break : MonoBehaviour {
 
 	public AudioSource player;
 
-	public ParticleSystem burst;
-
 	public GameObject gameMngr;
+
 	private DrawUI counter;
+
+	//public GameObject enemyInstance;
+	//public GameObject burst;
 
 	void Start()
 	{
@@ -18,18 +20,33 @@ public class Break : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
-		burst.transform.position = col.gameObject.transform.position;
 
-		if (col.gameObject.tag == "breakable") 
-		{
-			burst.Play();
-			player.Play();
+		if (col.gameObject.tag == "breakable") {
+			//burst.SetActive(true);
 
-
-			Destroy(col.gameObject);
-
+			player.Play ();
+			Destroy (col.gameObject);
 			counter.points = counter.points + 1;
+		} else if (col.gameObject.tag == "powerup_Ammo") 
+		{
+			Destroy(col.gameObject);
+			counter.ammo += 50;
 		}
 	}
+
+//	ParticleSystem GetParticleSystem(Collision objectInstance)
+//	{
+//		enemyInstance = objectInstance.gameObject;
+//		burst = enemyInstance.GetComponentInChildren<ParticleSystem> ();
+//
+//		if (burst != null) {
+//			return burst;
+//		} else if (burst == null) {
+//			Debug.Log("NO PARTICLE SYSTEM");
+//			return null;
+//		}
+//
+//		return null;
+//	}
 
 }

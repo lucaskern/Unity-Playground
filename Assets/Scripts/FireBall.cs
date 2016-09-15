@@ -7,16 +7,19 @@ public class FireBall : MonoBehaviour {
 	public Rigidbody ballPrefab;
 	public Transform fixPos;
 
-	int ammo = 100;
+	int ammo = 1000;
 
 	float timer = 1;
 
 	public AudioClip[] audioClip;
 
+	public GameObject gameMngr;
+	private DrawUI counter;
+
 
 	// Use this for initialization
 	void Start () {
-	
+		counter = gameMngr.GetComponent<DrawUI> ();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +30,7 @@ public class FireBall : MonoBehaviour {
 		if (timer < 0) {
 			ammo = ammo + 2;
 			timer = 1;
-			Debug.Log(ammo + "ammo left!");
+			//Debug.Log(ammo + "ammo left!");
 		}
 
 		//Fires big or small projectile
@@ -44,8 +47,8 @@ public class FireBall : MonoBehaviour {
 
 			//decrease ammo count
 			ammo = ammo - 2;
-
-			Debug.Log(ammo + "ammo left!");
+			counter.ammo = counter.ammo - 2;
+			//Debug.Log(ammo + "ammo left!");
 
 		} else if (Input.GetButtonDown ("Fire2") && ammo >= 10) {
 			//generate random force
@@ -62,8 +65,8 @@ public class FireBall : MonoBehaviour {
 
 			//decrease ammo count
 			ammo = ammo - 10;
-
-			Debug.Log(ammo + "ammo left!");
+			counter.ammo = counter.ammo - 10;
+			//Debug.Log(ammo + "ammo left!");
 		}
 
 	}
